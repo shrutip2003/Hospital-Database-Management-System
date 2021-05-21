@@ -1,6 +1,6 @@
 # Hospital-Database-Management-System
 
-PROJECT SYNOPSIS
+PROJECT SYNOPSIS:
 The main aim of this project is to automate the process of managing (inputting data, storing data, updating data and deleting data) the details of a hospital, including tables of its 1) Patients, 2) Doctors and
 3)Appointments using a Python and Mysql program, enhanced by a Graphical User Interface(GUI) built using the Tkinter library.
 
@@ -10,7 +10,7 @@ only be done by a valid administrator after logging in.
 This project aims to reduce the access time, improve the efficiency ,automate the process and show a simple analysis of a Hospital Management System.It tracks the details of patients and doctors (Name ,Sex, DOB,
 BloodGroup, Address ) and appointments (PatientId, ContactNo,DoctorID, Date and time of appointment, problem)
 
-PROJECT REQUIREMENTS
+PROJECT REQUIREMENTS:
 HARDWARE USED/REQUIRED:
 1) Processor: Intel® Core (TM) CPU @ 1.6 GHZ
 2) RAM: 8.00 GB
