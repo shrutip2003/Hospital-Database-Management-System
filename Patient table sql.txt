@@ -1,0 +1,72 @@
+insert into patient values(001,"Aditya Kapur","M",'1978-03-01','A','140, KG Marg,New Delhi');
+insert into patient values(002,"Kunal Singh","M",'1984-11-03','O','A BLock,New Friends Colony,New Delhi');
+insert into patient values(003,"Radhika Joshi","F",'2000-12-04','A-','B Block,Rajiv Chowk,New Delhi');
+insert into patient values(004,"Supranta Negi","F",'1997-10-01','B+','392,Qutb Marg,New Delhi');
+insert into patient values(005,"Keshav Agarwal","M",'1989-02-21','O-','103,Dlf Colony,Gurgaon');
+insert into patient values(006,"Rajesh Pandey","M",'1991-07-30','B','11,APJ Colony,Noida');
+insert into patient values(007,"Sumra Sobti","F",'1990-04-01','A-','A12,Defence Colony,New Delhi');
+insert into patient values(008,"Saurav Dubey","M",'1974-05-29','O+','123,MG Road,New Delhi');
+insert into patient values(009,"Priyanka Saini","F",'2005-06-10','AB+','801,Rajesh Marg,Dwarka');
+insert into patient values(010,"Kashish Kedia","F",'1994-06-13','A','201 New Mother Road');
+insert into patient values(011,"Sanjay Pant","M",'1994-02-21','O-','A14, MG Road, New Delhi');
+insert into patient values(012,"Rohan Bal","M",'2002-05-25','O','189,Raj Kot Place New Delhi');
+insert into patient values(013,"Kartik Singh","M",'2010-07-15','A-','A Block Rajiv Chowk New Delhi');
+insert into patient values(014,"Richa Gupta","F",'1982-03-02','A-','F Block Madhav Chowk New Delhi');
+insert into patient values(015,"Sasha Gopal","F",'1991-08-18','A','C Block Rajiv Chowk New Delhi');
+
+
+create table PATIENT(
+ Id int(3) primary key,
+ Name varchar(30),
+  Sex char(1),
+  DOB date,
+  Blood_Group char(3),
+  Address varchar(40) );
+
+
+
+ create table doctor(
+    ID int(3) primary key,
+    Name varchar(20),
+    Sex char(1),
+    Department varchar(20),
+    DOB date,
+    Address varchar(50)
+    );
+
+
+insert into doctor values( 1,'Mohit Gupta','M','Radiology','1966-03-01','103, Onkar Nagar B, Main Road, Tri Nagar');
+insert into doctor values( 2,'Rohit Agarwal','M','Cardiology',"1962-05-8","6,pedder G D Mrg, Cumballa Hill");
+insert into doctor values( 3,'Mona Chauhan','F','Gynaecology',"1976-09-06","37  Blenin Sarani, Dharmatala");
+insert into doctor values( 4,'Manisha Choudhary',"F",'Dermatology',"1945-2-022","56 -d, Thacker Indl Estate, N M Joshi Marg");
+insert into doctor values( 5,'Rudra Goyal',"M","ICU","1984-11-28","Ground Floor Bhalchandra Road,Nursi, Matunga");
+insert into doctor values( 6,"Sahara Maini","F","Rheumatology","1990-12-02","B Block, Gopinat Bazar");
+insert into doctor values( 7,"Mahesh Chirag","M","ICU",'1986-04-04',"123, New Colony");
+insert into doctor values( 8,"Vikram Sen", 'M',"Radiology","1968-01-01","5 rd Flr Samir, Kothi Road, Kothi Road");
+insert into doctor values( 9,"Aparna Joshi","F","Dermatology","1973-07-09","801,New Friends Colony ,GK");
+insert into doctor values(10,"Naresh Sethi","M","Cardiology",'1991-03-08',"3rd Floor Defence Enclave, Delhi");
+insert into doctor values(4,'Rajiv Singla','M','Emergency','1988-04-19','A Block, 203 Enclave Road Tri Nagar')
+
+create table appointment(
+    AppointmentNo int(3) primary key,
+    Patient_ID int(3) references patient(id),
+    ContactNo bigint(10),
+    Doctor_Id int(3) references doctor(id),
+    Date_Appmt date,
+    time_appmt time,
+    problem varchar(30) ,
+    unique(Date_Appmt,time_appmt,Doctor_ID) );
+
+
+ insert into appointment values(1,2,9910284756,3,'2020/10/04','13:00','Respiratory Issues');
+ insert into appointment values(2,14,3,8843908567,9,'2020/9/24','09:00','Skin Rashes')
+ insert into appointment values(3,2,9960324458,4,'2020/9/08','17:00','Injured foot')
+ insert into appointment values(4,7,7794856903,6,'2020/11/20','10:00','Stomach Ache');
+ insert into appointment values(5,1,9901295586,1,'2020/09/11','12:00','Pneumonia');
+ insert into appointment values(6,3,9233409987,10,'2021/01/01','08:00','Dry Cough');
+ insert into appointment values(7,12,8809679456,2,'2020/09/30','16:00','Eye Infection');
+ insert into appointment values(8,10,9902330956,5,'2020/09/15','11:30','High fever');
+ insert into appointment values(9,6,7709239486,7,'2020/010/15','15:45','General Checkup');
+ insert into appointment values(10,15,9909847557,8,'2020/11/15','10:15','General Checkup');
+
+
